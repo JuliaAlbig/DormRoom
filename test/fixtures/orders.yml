@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: MyString
+  pst_rate: 9.99
+  gst_rate: 9.99
+  hst_rate: 9.99
+  customer_id: 1
+
+two:
+  status: MyString
+  pst_rate: 9.99
+  gst_rate: 9.99
+  hst_rate: 9.99
+  customer_id: 1
