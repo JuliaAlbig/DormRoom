@@ -1,4 +1,7 @@
 DormRoom::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   #get "business/index"
 
   root :to => 'business#index'
