@@ -1,0 +1,13 @@
+<section>
+  <h3><%= link_to product.name, product %></h3>
+  <p>
+    <strong>Price:</strong> <%= number_to_currency product.price %>
+  </p>
+  <% if product.image_file %>
+    <p><%= link_to image_tag(product.image_file, :width => '150'), product %></p>
+  <% end %>
+  <div><%= product.description %></div>
+  <% if product.category %>
+    <p>Category: <%= product.category.name %></p>
+  <% end %>
+</section>

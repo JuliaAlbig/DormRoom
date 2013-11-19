@@ -1,10 +1,14 @@
 DormRoom::Application.routes.draw do
+  get "products/show"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   #get "business/index"
 
-  root :to => 'business#index'
+  root to: 'business#index', via: :get
+
+  match "products/:id" => "products#show", as: "product"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

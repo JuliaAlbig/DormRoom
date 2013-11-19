@@ -5,5 +5,6 @@ class Product < ActiveRecord::Base
   attr_accessible :description, :name, :price, :stock_quantity, :image_file, :category_id
   validates :name, :price, :stock_quantity, :category_id, presence: true
   validate :name, uniqueness: true
-  validates :price, :stock_quantity, numericality: true, numericality: {greater_than: 0.0}
+  validates :price, numericality: {greater_than_or_equal_to: 0.01}
+  validates :stock_quantity, numericality: {greater_than_or_equal_to: 0}
 end
