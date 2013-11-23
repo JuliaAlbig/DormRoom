@@ -1,0 +1,5 @@
+<% if @products.empty? %>
+	<p>
+		Sorry, your search for "<%= params[:keywords] %>" returned no results.
+<% end %>
+<%= render @products %>
