@@ -1,7 +1,1 @@
-<%= form_tag search_results_path do %>
-	<%= text_field_tag :keywords %>
 
-<%= collection_select(:person, :catgeory_id, Category.all, :id, :name) %>
-
-	<%= submit_tag "Search" %>
-<% end %>
