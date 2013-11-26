@@ -1,5 +1,10 @@
 <% if @products.empty? %>
-	<p>
-		Sorry, your search for "<%= params[:keywords] %>" returned no results.
+	<p>Sorry, your search for "<%= params[:keywords] %>" returned no results.</p>
+<% elsif params[:keywords].length < 2 %>
+	<p>Please enter at least one word to search by.</p>
+<% else %>
+	<%= render @products %>
 <% end %>
-<%= render @products %>
+
+<%= debug params %>
+
