@@ -8,6 +8,8 @@ DormRoom::Application.routes.draw do
 
   root to: 'business#index', via: :get
 
+  match "products" => "business#showall", as: "allproducts", via: :get
+
   match "products/:id" => "products#show", as: "product"
 
   #match "search" => "business#search", as: "search", via: :get

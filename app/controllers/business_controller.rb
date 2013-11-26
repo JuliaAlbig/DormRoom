@@ -24,4 +24,8 @@ class BusinessController < ApplicationController
   def newproducts
     @products = Product.where("status_id = 1")
   end
+
+    def showall
+      @products = Product.all
+  end
 end

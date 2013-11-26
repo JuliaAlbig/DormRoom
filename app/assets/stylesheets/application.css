@@ -121,14 +121,29 @@ nav > ul li
 #content 
 {
 	width:80%;
-	margin:0px auto;
+	margin:20px auto;
 }
 
-#singleproduct
+.singleproduct
 {
-	width: 200px;
-	min-height: 300px;
+	width: 280px;
+	height: 400px;
 	float:left;
+	border:1px solid #B2B2B2;
 	box-shadow: 2px 2px #B2B2B2;
-	margin: 4px;
+	margin: 5px;
+	padding:10px;
+	border-radius:5px;
+}
+
+.singleproduct > p 
+{
+	font-size:14px;
+}
+
+.product-image
+{
+	width:200px;
+	height:200px;
+	margin: 10px auto 15px;
 }

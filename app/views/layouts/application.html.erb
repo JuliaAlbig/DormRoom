@@ -10,10 +10,10 @@
 <body>
 	<header>
 		<div id="logo">
-			<%= image_tag "logo.png", id: "logo-image" %>
+			<%= link_to image_tag("logo.png", id: 'logo-image'), {action: "index", controller: "business"} %>
 		</div>
 		<div id="title">
-			<%= image_tag "title.png", id: "title-image" %>
+			<%= link_to image_tag("title.png", id: "title-image"), {action: "index", controller: "business"} %>
 			<h3>Furniture &amp; Accessories for College Living</h3>
 			<%= render "search" %>
 		</div>
@@ -23,15 +23,15 @@
 		<div id="navigation">
 			<nav>
 				<ul>
-					<li>Categories</li>
 					<li>
 						<%= link_to "New Products", newproducts_path, class: "menulinks" %>
 					</li>
 					<li>
 						<%= link_to "On Sale", saleproducts_path, class: "menulinks" %>
 					</li>
-					<li>About The Company</li>
-					<li>Contact Us</li>
+					<li><%= link_to "All Products", allproducts_path, class: "menulinks" %></li>
+					<li><%= link_to "About The Company", about_path, class: "menulinks" %></li>
+					<li><%= link_to "Contact Us", contact_path, class: "menulinks" %></li>
 				</ul>
 			</nav>
 		</div>
