@@ -15,6 +15,7 @@
 body
 {
 	width: 100%;
+	font-family: Trebuchet, sans-serif;
 }
 
 header
@@ -98,4 +99,36 @@ nav > ul li
 	padding:0px 20px;
 	font-size:20px;
 	color:#FFF;
+}
+
+.menulinks
+{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.menulinks :hover
+{
+	box-shadow: 1px 1px #80CCFF;
+}
+
+.productlinks
+{
+	text-decoration: none;
+	color:#000;
+}
+
+#content 
+{
+	width:80%;
+	margin:0px auto;
+}
+
+#singleproduct
+{
+	width: 200px;
+	min-height: 300px;
+	float:left;
+	box-shadow: 2px 2px #B2B2B2;
+	margin: 4px;
 }

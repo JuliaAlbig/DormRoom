@@ -24,19 +24,20 @@
 			<nav>
 				<ul>
 					<li>Categories</li>
-					<li>New Products</li>
-					<li>Sale Items</li>
+					<li>
+						<%= link_to "New Products", newproducts_path, class: "menulinks" %>
+					</li>
+					<li>
+						<%= link_to "On Sale", saleproducts_path, class: "menulinks" %>
+					</li>
 					<li>About The Company</li>
 					<li>Contact Us</li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-
-
-
-
-
-	<%= yield %>
+	<section id="content">
+		<%= yield %>
+	</section>
 </body>
 </html>
