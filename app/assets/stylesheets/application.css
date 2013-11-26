@@ -30,15 +30,20 @@ body
 
 #title
 {
-	width: 1000px;
+	width: 70%;
 	display:inline;
+	float:left;
+}
+
+h3
+{
+	font-family: Berlin Sans FB Demi, sans-serif;
 }
 
 #title > h3
 {
-	font-family: Berlin Sans FB Demi, sans-serif;
 	margin-top: -10px;
-	margin-left:790px;
+	margin-left:610px;
 }
 
 #title-image
@@ -49,4 +54,23 @@ body
 #searchfield
 {
 	width: 300px;
+}
+
+#cart
+{
+	text-align: right;
+	padding-right:80px;
+}
+
+#cart > h3
+{
+	margin-top:-10px;
+	margin-right:50px;
+}
+
+#cart-image
+{
+	margin-top:50px;
+	margin-right:40px;
+	height:100px;
 }

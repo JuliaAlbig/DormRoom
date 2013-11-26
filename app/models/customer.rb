@@ -5,4 +5,8 @@ class Customer < ActiveRecord::Base
   validates_associated :province
   validates :email, uniqueness: true
   validates :address, :city, :country, :email, :first_name, :last_name, :postal_code, :province_id, presence: true
+
+  def name
+  	return self.first_name + " " + self.last_name
+  end
 end
