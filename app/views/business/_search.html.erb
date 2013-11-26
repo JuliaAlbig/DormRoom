@@ -1,9 +1,9 @@
 <%= form_tag search_results_path do %>
 	<%= text_field_tag :keywords %>
 
-	<%= collection_select(:category, :id, Category.all, :id, :name, {include_blank: 'All Categories'}) %>
+	<!--<%=  select_tag(:category, options_from_collection_for_select(Category.all, :id, :name), {prompt: 'All Categories'}) %>-->
 
-	<!--<%=  select_tag("category", options_from_collection_for_select(Category.all, :id, :name), {include_blank: 'All Categories'}) %>-->
+	<%= collection_select("category", "id", Category.all, :id, :name, {include_blank: 'All Categories'}) %>
 
 	<%= submit_tag "Search" %>
 <% end %>
