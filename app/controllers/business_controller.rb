@@ -7,8 +7,8 @@ class BusinessController < ApplicationController
   end
 
   def search_results
-    @products = Product.where("name OR description LIKE ?", "%#{params[:keywords]}%")
-    @products = @products.where("category_id LIKE ?", "%#{params[:category]}") unless params[:category] = ""
+    @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%")
+    @products = @products.where("category_id = ?", params[:category]) unless params[:category] == ""
   end
 
   def contact
