@@ -17,9 +17,14 @@ body
 	width: 100%;
 }
 
+header
+{
+	font-family: Berlin Sans FB Demi, sans-serif;
+}
+
 #logo-image
 {
-	height: 240px;
+	height: 220px;
 }
 
 #logo 
@@ -30,14 +35,9 @@ body
 
 #title
 {
-	width: 70%;
 	display:inline;
 	float:left;
-}
-
-h3
-{
-	font-family: Berlin Sans FB Demi, sans-serif;
+	margin-left:40px;
 }
 
 #title > h3
@@ -59,13 +59,7 @@ h3
 #cart
 {
 	text-align: right;
-	padding-right:80px;
-}
-
-#cart > h3
-{
-	margin-top:-10px;
-	margin-right:50px;
+	padding-right:100px;
 }
 
 #cart-image
@@ -73,4 +67,35 @@ h3
 	margin-top:50px;
 	margin-right:40px;
 	height:100px;
+}
+
+#navigation
+{
+	clear:both;
+	width:100%;
+	background:#000;
+	height:40px;
+	margin-left:-10px;
+}
+
+nav
+{
+
+	width:100%;
+	text-align:center;
+	padding-top:5px;
+}
+
+nav > ul
+{
+	display:inline;
+	list-style:none; 
+}
+
+nav > ul li 
+{
+	display:inline;
+	padding:0px 20px;
+	font-size:20px;
+	color:#FFF;
 }
