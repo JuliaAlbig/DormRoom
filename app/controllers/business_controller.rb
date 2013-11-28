@@ -26,6 +26,6 @@ class BusinessController < ApplicationController
   end
 
     def showall
-      @products = Product.all
+      @categories = Category.order(:name).includes(:products)
   end
 end
