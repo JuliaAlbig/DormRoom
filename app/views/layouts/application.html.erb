@@ -18,7 +18,7 @@
 			<%= render "search" %>
 		</div>
 		<div id="cart">
-			<%= image_tag "cart.png", id: "cart-image" %>
+			<%= link_to image_tag("cart.png", id: 'cart-image'), {action: "cart", controller: "business"} %>
 		</div>
 		<div id="navigation">
 			<nav>

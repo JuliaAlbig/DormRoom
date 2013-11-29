@@ -3,7 +3,7 @@
   
   <% if product.image_file %>
     <div class = "product-image">
-      <%= link_to image_tag(product.image_file, width: "200"), product %>
+      <%= link_to image_tag(product.image_file), product %>
     </div>
   <% end %>
   <p><%= product.description %></p>
@@ -11,6 +11,6 @@
     <strong>Price:</strong> <%= number_to_currency product.price %>
   </p>
   <p>
-    Shopping cart tag goes here
+    <%= render partial: "shopping", :locals => {:product => product} %>
   </p>
 </div>

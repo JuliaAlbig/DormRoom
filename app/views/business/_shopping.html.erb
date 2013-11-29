@@ -1,0 +1,5 @@
+<% if session[:cart].include?(product.id) %>
+  <%= button_to "Remove from Cart", remove_from_cart_path(product), class: "buttons" %>
+<% else %>
+  <%= button_to "Add to Cart", add_to_cart_path(product), class: "buttons" %>
+ <% end %>

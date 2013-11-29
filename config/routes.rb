@@ -8,7 +8,7 @@ DormRoom::Application.routes.draw do
 
   root to: 'business#index', via: :get
 
-  match "products" => "business#showall", as: "allproducts", via: :get
+  match "products" => "business#showall", as: "allproducts"
 
   match "products/:id" => "business#show", as: "product", via: :get
 
@@ -23,6 +23,16 @@ DormRoom::Application.routes.draw do
   match "newproducts" => "business#newproducts", as: "newproducts", via: :get
 
   match "saleproducts" => "business#saleproducts", as: "saleproducts", via: :get
+
+  match "cart/:id/add" => "business#add_to_cart", as: "add_to_cart", via: :post
+
+  match "cart/:id/remove" => "business#remove_from_cart", as: "remove_from_cart", via: :post
+
+  match "cart" => "business#cart", as: "cart", via: :get
+
+  match "cart/empty" => "business#empty_cart", as: "empty_cart", via: :post
+
+  match "cart/checkout" => "business#checkout", as: "checkout", via: :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,19 @@
+<div id="cart-section">
+	<% if session[:cart].empty? %>
+		<h3>Your shopping cart is empty.</h3>
+	<% else %>
+		<% @cart_contents.each do |product| %>
+			<div class: "cart-item">
+				<h3><%= product.name %></h3>
+				<%= image_tag(product.image_file, width: 100) %>
+				<%= render partial: "shopping", :locals => {:product => product} %>
+			</div>
+		<% end %>
+	<% end %>
+	<div id="button-section">
+		<%= button_to 'Keep Shopping', allproducts_path, class: "buttons" %>
+		<%= button_to 'Empty Cart', empty_cart_path, class: "buttons" %>
+		<%= button_to 'Check Out', checkout_path, class: "buttons" %>
+	</div>
+</div>
+
