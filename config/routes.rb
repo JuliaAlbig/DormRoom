@@ -1,5 +1,5 @@
 DormRoom::Application.routes.draw do
-  get "products/show"
+  get "business/show"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,7 +10,7 @@ DormRoom::Application.routes.draw do
 
   match "products" => "business#showall", as: "allproducts", via: :get
 
-  match "products/:id" => "products#show", as: "product"
+  match "products/:id" => "business#show", as: "product", via: :get
 
   #match "search" => "business#search", as: "search", via: :get
 
