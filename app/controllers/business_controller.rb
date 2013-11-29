@@ -53,6 +53,10 @@ class BusinessController < ApplicationController
 
   end
 
+  def order
+    
+  end
+
   def empty_cart
     session[:cart] = []
     redirect_to action: :showall
