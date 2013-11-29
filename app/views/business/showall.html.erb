@@ -1,2 +1,9 @@
-<% render @categories %>
+<% @categories.each do |category| %>
+		<div class="category-name">
+			<h2>For the <%= category.name.downcase %></h2>	
+		</div>
+		<div class="category">
+			<%= render category.products %>
+		</div>
+<% end %>
 

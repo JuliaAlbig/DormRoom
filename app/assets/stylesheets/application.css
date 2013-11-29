@@ -127,7 +127,7 @@ nav > ul li
 .singleproduct
 {
 	width: 280px;
-	height: 400px;
+	height: 430px;
 	float:left;
 	border:1px solid #B2B2B2;
 	box-shadow: 2px 2px #B2B2B2;
@@ -146,4 +146,27 @@ nav > ul li
 	width:200px;
 	height:200px;
 	margin: 10px auto 15px;
+}
+
+.category-name
+{
+	clear:both;
+	width:80%;
+	background-color: #CCC;
+	box-shadow: 2px 2px #B2B2B2;
+	margin: 40px auto 0px;
+	padding-left:15px;
+}
+
+.category-name > h2
+{
+	font-family: Berlin Sans FB Demi, sans-serif;
+}
+
+.category
+{
+	clear:both;	
+	width: 80%;
+	margin:20px auto;
+	padding: 15px;
 }

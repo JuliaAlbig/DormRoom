@@ -25,7 +25,8 @@ class BusinessController < ApplicationController
     @products = Product.where("status_id = 1")
   end
 
-    def showall
+  def showall
       @categories = Category.order(:name).includes(:products)
   end
+
 end
