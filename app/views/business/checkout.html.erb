@@ -1,2 +1,37 @@
-<p>Check me out!</p>
+<h3>CHECKOUT</h3>
 
+<p>Please enter your information so we can create your order!</p>
+
+<%= form_tag do %>
+<ul>
+	<li>
+  	<%= label_tag(:first_name, "First name:") %>
+	  <%= text_field_tag(:first_name) %>
+	</li>
+	<li>
+  	<%= label_tag(:last_name, "Last name:") %>
+	  <%= text_field_tag(:last_name) %>		
+	</li>
+	<li>
+  	<%= label_tag(:email, "Email:") %>
+	  <%= text_field_tag(:email) %>
+	</li>
+	<li>
+  	<%= label_tag(:address, "Address: ") %>
+	  <%= text_field_tag(:address) %>
+	</li>
+		<li>
+  	<%= label_tag(:city, "City: ") %>
+	  <%= text_field_tag(:city) %>
+	</li>
+		<li>
+  	<%= label_tag(:province, "Province: ") %>
+	  <%= text_field_tag(:province) %>
+	</li>
+		<li>
+  	<%= label_tag(:postal_code, "Postal Code: ") %>
+	  <%= text_field_tag(:postal_code) %>
+	</li>
+</ul>
+  <%= submit_tag("Create Order") %>
+<% end %>

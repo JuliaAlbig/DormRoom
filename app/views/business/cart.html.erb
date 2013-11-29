@@ -3,14 +3,17 @@
 		<h3>Your shopping cart is empty.</h3>
 	<% else %>
 		<% @cart_contents.each do |product| %>
-			<div class: "cart-item">
+			<div class="cart-item">
 				<h3><%= product.name %></h3>
 				<%= image_tag(product.image_file, width: 100) %>
+				<p><strong>Qty: 1</strong></p>
+				<p><strong>Price:</strong> <%= number_to_currency product.price %></p>
 				<%= render partial: "shopping", :locals => {:product => product} %>
 			</div>
 		<% end %>
 	<% end %>
 	<div id="button-section">
+		<h3>Subtotal: <%= number_to_currency @total %></h3>
 		<%= button_to 'Keep Shopping', allproducts_path, class: "buttons" %>
 		<%= button_to 'Empty Cart', empty_cart_path, class: "buttons" %>
 		<%= button_to 'Check Out', checkout_path, class: "buttons" %>

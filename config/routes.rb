@@ -34,6 +34,10 @@ DormRoom::Application.routes.draw do
 
   match "cart/checkout" => "business#checkout", as: "checkout", via: :post
 
+  match "about" => "business#about", as: "about", via: :get
+
+  match "contact" => "business#contact", as: "contact", via: :get
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

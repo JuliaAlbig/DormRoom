@@ -14,9 +14,11 @@ class BusinessController < ApplicationController
   end
 
   def contact
+    @page = Page.find(2)
   end
 
   def about
+    @page = Page.find(1)
   end
 
   def saleproducts
@@ -48,6 +50,7 @@ class BusinessController < ApplicationController
   end
 
   def cart
+
   end
 
   def empty_cart
@@ -62,6 +65,10 @@ protected
   def initialize_cart
     session[:cart] ||=[]
     @cart_contents ||= []
+    @total = 0.00
     session[:cart].each { |id| @cart_contents << Product.find(id) }
+    @cart_contents.each do |product|
+      @total += product.price
+    end
   end
 end
