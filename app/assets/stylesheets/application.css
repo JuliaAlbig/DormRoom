@@ -126,6 +126,7 @@ a
 {
 	width:80%;
 	margin:20px auto;
+
 }
 
 .singleproduct
@@ -158,16 +159,20 @@ a
 
 #product-page .singleproduct, #index-feature .singleproduct
 {
-	clear:both;
 	width:600px;
 	height:350px;
 }
 
-#index-feature .singleproduct
+#index-feature
+{
+	width:1100px;
+	margin:auto;
+}
+
+#index-feature > .singleproduct
 {
 	width:500px;
 	float:left;
-	display:inline;
 }
 
 .product-image
