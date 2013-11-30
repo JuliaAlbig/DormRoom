@@ -20,7 +20,7 @@ body
 
 header
 {
-	font-family: Berlin Sans FB Demi, sans-serif;
+	font-family: "Berlin Sans FB Demi", sans-serif;
 }
 
 #logo-image
@@ -211,7 +211,7 @@ a
 
 .category-name > h2
 {
-	font-family: Berlin Sans FB Demi, sans-serif;
+	font-family: "Berlin Sans FB Demi", sans-serif;
 }
 
 .category
@@ -261,7 +261,7 @@ footer .menulinks
 {
 	color:#000;
 	font-size: 16px;
-	font-family: Berlin Sans FB Demi, sans-serif;
+	font-family: "Berlin Sans FB Demi", sans-serif;
 }
 
 form label
