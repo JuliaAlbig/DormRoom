@@ -54,13 +54,14 @@ class BusinessController < ApplicationController
   end
 
   def order
-    if params[:province] = ""
-      province = ""
+    if params[:province] == ""
+      province_id = ""
     else
-      province = Province.where("name = '" + params[:province] + "'").first.id
-      @gst = params[:province].gst_rate
-      @pst = params[:province].pst_rate
-      @hst = params[:province].hst_rate
+      province = Province.where("name = '" + params[:province] + "'").first
+      province_id = province.id
+      @gst = province.gst
+      @pst = province.pst
+      @hst = province.hst
     end
 
     @customer = Customer.new(
@@ -69,7 +70,7 @@ class BusinessController < ApplicationController
       email: params[:email],
       address: params[:address],
       city: params[:city],
-      province_id: province,
+      province_id: province_id,
       country: "Canada", 
       postal_code: params[:postal_code]
     )
@@ -85,6 +86,9 @@ class BusinessController < ApplicationController
       )
       order_id = @order.id
 
+      @subtotal = 0.00
+      multiplier = @gst + @pst + @hst + 1
+
       @cart_contents.each do |product|
         LineItem.create(
           order_id: order_id, 
@@ -92,11 +96,10 @@ class BusinessController < ApplicationController
           product_id: product.id,
           quantity: 1
         )
+        @subtotal += product.price
       end 
 
-      @subtotal = @cart_contents.sum("price")
-      @total = @subtotal * (1 + @order.gst_rate + @order.pst_rate + @order.hst_rate)
-
+      @total = @subtotal * multiplier
       @cart_contents = []
       session[:cart] = []
     end
