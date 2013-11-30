@@ -2,7 +2,7 @@
 
 <p>Please enter your information so we can create your order!</p>
 
-<div class = "form">
+<%= form_tag(order_path) do %>
 <ul>
 	<li>
   	<%= label_tag(:first_name, "First name:") %>
@@ -34,4 +34,4 @@
 	</li>
 </ul>
   <%= button_to 'Create Order', order_path, class: "buttons" %>
-</div>
+<% end %>

@@ -54,7 +54,52 @@ class BusinessController < ApplicationController
   end
 
   def order
-    
+    if params[:province] = ""
+      province = ""
+    else
+      province = Province.where("name = '" + params[:province] + "'").first.id
+      @gst = params[:province].gst_rate
+      @pst = params[:province].pst_rate
+      @hst = params[:province].hst_rate
+    end
+
+    @customer = Customer.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      address: params[:address],
+      city: params[:city],
+      province_id: province,
+      country: "Canada", 
+      postal_code: params[:postal_code]
+    )
+
+    if @customer.save
+      customer_id = @customer.id
+      @order = Order.create(
+        gst_rate: @gst, 
+        hst_rate: @hst, 
+        pst_rate: @pst, 
+        status: "unshipped",
+        customer_id: customer_id
+      )
+      order_id = @order.id
+
+      @cart_contents.each do |product|
+        LineItem.create(
+          order_id: order_id, 
+          price: product.price,
+          product_id: product.id,
+          quantity: 1
+        )
+      end 
+
+      @subtotal = @cart_contents.sum("price")
+      @total = @subtotal * (1 + @order.gst_rate + @order.pst_rate + @order.hst_rate)
+
+      @cart_contents = []
+      session[:cart] = []
+    end
   end
 
   def empty_cart

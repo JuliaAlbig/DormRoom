@@ -1,5 +1,10 @@
-<h2>Your order has been placed. Thank you!</h2>
-
-<h3>ORDER DETAILS</h3>
-
 <%= debug params %>
+
+<% if @customer.save %>
+
+	<h2>Your order has been placed. Thank you!</h2>
+	<h4>ORDER DETAILS</h4>
+<% else %>
+	<p>Oops! We are still missing some important information from you. Please return to the form and fill out all the fields.</p>
+	<%= button_to 'Return to form', checkout_path, class: "buttons" %>
+<% end if %>

@@ -246,18 +246,6 @@ a
 	display:block;
 }
 
-.buttons
-{
-	padding:5px 10px;
-	border:1px solid #B2B2B2;
-	border-radius: 3px;
-	box-shadow: inset 0 2px 3px #CCC;
-	box-shadow: inset 0 -2px 3px #CCC;
-	float:left;
-	font-weight: bold;
-	font-size: 14px;
-}
-
 footer .navigation
 {
 	background:#FFF;
@@ -276,19 +264,19 @@ footer .menulinks
 	font-family: Berlin Sans FB Demi, sans-serif;
 }
 
-.form label
+form label
 {
 	width:100px;
 	float:left;
 }
 
-.form li 
+form li 
 {
 	list-style: none;
 	line-height: 40px;
 }
 
-.form input
+form input
 {
 	width: 200px;
 	height:20px;
@@ -296,9 +284,10 @@ footer .menulinks
 	border:1px solid #BBB;
 }
 
-.form .buttons
+.buttons
 {
-	padding:5px 10px;
+	padding:5px 8px 20px;
+	margin-right: 5px;
 	border:1px solid #B2B2B2;
 	border-radius: 3px;
 	box-shadow: inset 0 2px 3px #CCC;
