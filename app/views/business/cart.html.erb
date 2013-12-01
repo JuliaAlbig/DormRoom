@@ -15,8 +15,8 @@
 	<div id="button-section">
 		<h3>Subtotal: <%= number_to_currency @total %></h3>
 		<%= button_to 'Keep Shopping', allproducts_path, class: "buttons" %>
-		<%= button_to 'Empty Cart', empty_cart_path, class: "buttons" %>
-		<%= button_to 'Check Out', checkout_path, class: "buttons" %>
+		<%= button_to 'Empty Cart', empty_cart_path, class: "buttons" unless session[:cart] == [] %>
+		<%= button_to 'Check Out', checkout_path, class: "buttons" unless session[:cart] == [] %>
 	</div>
 </div>
 

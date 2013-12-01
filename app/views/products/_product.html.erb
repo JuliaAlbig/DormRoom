@@ -10,5 +10,7 @@
   <p>
     <strong>Price:</strong> <%= number_to_currency product.price %>
   </p>
+  <div class="shopping">
     <%= render partial: "shopping", :locals => {:product => product} %>
+  </div>
 </div>

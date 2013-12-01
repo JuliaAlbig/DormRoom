@@ -1,10 +1,27 @@
-<%= debug params %>
-
 <% if @customer.save %>
 
 	<h2>Your order has been placed. Thank you!</h2>
-	<h4>ORDER DETAILS</h4>
+	<h3>INVOICE</h3>
+
+	<% @order_details.each do |item| %>
+		<h4>Item: <%= item.name %></h4>
+		<p>Quantity: 1  ~  Price: <%= item.price %></p>
+	<% end %>
+
+	<h4>Subtotal: <%= number_to_currency @subtotal %></h4>
+	<% if @gst > 0.01 %>
+		<p>GST: <%= number_to_currency (@gst * @subtotal) %></p>
+	<% end %>
+	<% if @pst > 0.01 %>
+		<p>PST: <%= number_to_currency (@pst * @subtotal) unless @pst < 0.01 %></p>
+	<% end %>
+	<% if @hst > 0.01 %>
+		<p>HST: <%= number_to_currency (@hst * @subtotal) unless @hst < 0.01 %></p>
+	<% end %>
+	<h4>Order Total: <%= number_to_currency @total %></h4>
+	<p>Status: <%= @order.status %></p>
+
 <% else %>
 	<p>Oops! We are still missing some important information from you. Please return to the form and fill out all the fields.</p>
 	<%= button_to 'Return to form', checkout_path, class: "buttons" %>
-<% end if %>
+<% end %>

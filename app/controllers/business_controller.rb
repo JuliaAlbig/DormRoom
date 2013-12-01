@@ -89,7 +89,9 @@ class BusinessController < ApplicationController
       @subtotal = 0.00
       multiplier = @gst + @pst + @hst + 1
 
-      @cart_contents.each do |product|
+      @order_details = @cart_contents
+
+      @order_details.each do |product|
         LineItem.create(
           order_id: order_id, 
           price: product.price,
