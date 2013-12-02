@@ -89,14 +89,14 @@ class BusinessController < ApplicationController
 
       @order_details = @cart_contents
 
-      @order_details.each do |product|
-        LineItem.create(
-          order_id: @order.id, 
-          price: product.price,
-          product_id: product.id,
-          quantity: 1
-        )
-        @subtotal += product.price
+      @order_details.each do |id|
+        line_item = @order.line_items.build
+          line_item.product = Product.find(id)
+          line_item.price = id.price
+          line_item.quantity = 1
+          line_item.save
+
+        @subtotal += line_item.price
       end 
 
       @total = @subtotal * multiplier
