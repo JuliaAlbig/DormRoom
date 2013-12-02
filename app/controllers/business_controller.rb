@@ -76,15 +76,13 @@ class BusinessController < ApplicationController
     )
 
     if @customer.save
-      customer_id = @customer.id
-      @order = Order.create(
+      @order = @customer.orders.build(
         gst_rate: @gst, 
         hst_rate: @hst, 
         pst_rate: @pst, 
-        status: "unshipped",
-        customer_id: customer_id
+        status: "unshipped"
       )
-      order_id = @order.id
+      @order.save
 
       @subtotal = 0.00
       multiplier = @gst + @pst + @hst + 1
@@ -93,7 +91,7 @@ class BusinessController < ApplicationController
 
       @order_details.each do |product|
         LineItem.create(
-          order_id: order_id, 
+          order_id: @order.id, 
           price: product.price,
           product_id: product.id,
           quantity: 1
